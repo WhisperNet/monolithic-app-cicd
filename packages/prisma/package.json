@@ -1,0 +1,25 @@
+{
+  "name": "@repo/db",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b --watch",
+    "generate": "prisma generate"
+  },
+  "exports": {
+    "./client": "./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*"
+  },
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "6.3.0",
+    "prisma": "^6.3.0"
+  }
+}
