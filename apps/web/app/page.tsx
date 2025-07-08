@@ -1,14 +1,13 @@
-
-import { client } from "@repo/db/client";
+import { client } from '@repo/db/client';
 
 export default async function Home() {
   const user = await client.user.findFirst();
 
   return (
     <div>
-      First name haha: 
+      First name:
       {user?.username}
-      password: 
+      password:
       {user?.password}
     </div>
   );
