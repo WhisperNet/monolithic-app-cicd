@@ -12,6 +12,10 @@ jobs:
           chmod 700 id_rsa.pem
           ssh -i ./id_rsa.pem -o StrictHostKeyChecking=no ubuntu@13.126.55.15 << 'EOF'
           #!/bin/bash
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+          nvm use 20
           cd /home/ubuntu/monolithic-app-cicd
           git pull origin master
           pnpm install
