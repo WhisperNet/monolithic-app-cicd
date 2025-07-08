@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo ${{ secrets.EC2_SSH_KEY }} > id_rsa
+          echo "${{ secrets.EC2_SSH_KEY }}" > id_rsa
           chmod 400 id_rsa
           ssh -i ~/id_rsa -o StrictHostKeyChecking=no ubuntu@13.126.55.15 << 'EOF'
           #!/bin/bash
