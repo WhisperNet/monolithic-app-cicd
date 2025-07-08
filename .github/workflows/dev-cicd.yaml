@@ -10,7 +10,7 @@ jobs:
       - run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > id_rsa.pem
           chmod 700 id_rsa.pem
-          ssh -i ~/id_rsa.pem -o StrictHostKeyChecking=no ubuntu@13.126.55.15 << 'EOF'
+          ssh -i ./id_rsa.pem -o StrictHostKeyChecking=no ubuntu@13.126.55.15 << 'EOF'
           #!/bin/bash
           cd /home/ubuntu/monolithic-app-cicd
           git pull origin master
